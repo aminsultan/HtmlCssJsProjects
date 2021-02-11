@@ -32,6 +32,7 @@
             <br>
             <div>
                 <button id="add" type="submit" class="btn btn-primary">Add to List</button>
+                <button id="clear" type="submit" class="btn btn-primary" onclick="clearStorage()">Clear List</button>
             </div>
 
        
@@ -130,6 +131,15 @@
            localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray));
            update();
        }
+       function clearStorage(){
+           if(confirm("do you really want to clear the stogare?")){
+            console.log("clearing the storage...");
+           localStorage.clear();
+           update();
+           }
+           
+       }
+
 
     </script>
 </body>
